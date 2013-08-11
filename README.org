@@ -1,0 +1,9 @@
+A modeline for URxvt.
+
+* Usage
+
+  Download and put it in your ~perl-lib~ (or change your ~perl-lib~ to
+  contain it), add ~modeline~ to your ~perl-ext-common~, and set the
+  ~URxvt.modeline.command~ setting to a shell-executable which produces
+  a single line of output which will be shown in the last line of the
+  terminal.
