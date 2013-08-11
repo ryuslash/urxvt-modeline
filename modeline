@@ -45,7 +45,7 @@ sub refresh {
    my $text = " " x $ncol;
    my $rend = [($self->{rs_tabbar}) x $ncol];
 
-   my $output = `$self->{command}`;
+   my $output = `$self->{command} $ncol`;
    substr $text, 0, length $output, $output;
 
    my $idx = 0;
