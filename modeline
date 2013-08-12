@@ -91,11 +91,11 @@ sub configure {
    # this is an extremely dirty way to force a configurenotify, but who cares
    $tab->XMoveResizeWindow (
       $tab->parent, 0, 0,
-      $self->width, $self->height - $self->{tabheight}
+      $self->width, ($self->nrow - 1) * $self->{tabheight}
    );
    $tab->XMoveResizeWindow (
       $tab->parent, 0, 0,
-      $self->width, $self->height - $self->{tabheight}
+      $self->width, ($self->nrow - 1) * $self->{tabheight}
    );
 }
 
