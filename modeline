@@ -268,7 +268,6 @@ sub on_start {
       shift @argv;
    } while @argv && $argv[0] ne "-e";
 
-   $self->{overlay} = $self->overlay (-1, 0, 8, 1, urxvt::OVERLAY_RSTYLE, 0);
    $self->{timer} = urxvt::timer
                     ->new
                     ->start (1 + int urxvt::NOW) # make sure we update "on" the second
