@@ -1,4 +1,10 @@
+#+STARTUP: showall
+
 A modeline for URxvt.
+
+*Note:* The code in this project has been copied and taken from the
+~tabbed~ extension included in the ~rxvt-unicode~ distribution (at least
+in Archlinux). I'm still cleaning everything up.
 
 * Usage
 
