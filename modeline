@@ -1,9 +1,7 @@
 #! perl
 
-#:META:X_RESOURCE:modeline-fg:colour:tab bar foreground colour
-#:META:X_RESOURCE:modeline-bg:colour:tab bar background colour
-#:META:X_RESOURCE:tab-fg:colour:tab foreground colour
-#:META:X_RESOURCE:tab-bg:colour:tab background colour
+#:META:X_RESOURCE:fg:colour:tab bar foreground colour
+#:META:X_RESOURCE:bg:colour:tab bar background colour
 #:META:X_RESOURCE:command:string:command
 
 =head1 NAME
@@ -27,10 +25,8 @@ The tabbar itself can be configured similarly to a normal terminal, but
 with a resource class of C<URxvt.modeline>. In addition, it supports the
 following four resources (shown with defaults):
 
-   URxvt.modeline.tabbar-fg: <colour-index, default 3>
-   URxvt.modeline.tabbar-bg: <colour-index, default 0>
-   URxvt.modeline.tab-fg:    <colour-index, default 0>
-   URxvt.modeline.tab-bg:    <colour-index, default 1>
+   URxvt.modeline.fg: <colour-index, default 3>
+   URxvt.modeline.bg: <colour-index, default 0>
 
 See I<COLOR AND GRAPHICS> in the @@RXVT_NAME@@(1) manpage for valid
 indices.
@@ -240,17 +236,12 @@ sub on_init {
 
    my $fg    = $self->x_resource ("fg");
    my $bg    = $self->x_resource ("bg");
-   my $tabfg = $self->x_resource ("tab-fg");
-   my $tabbg = $self->x_resource ("tab-bg");
    $self->{command} = $self->x_resource ("command");
 
-   defined $fg    or $fg    = 3;
-   defined $bg    or $bg    = 0;
-   defined $tabfg or $tabfg = 0;
-   defined $tabbg or $tabbg = 1;
+   defined $fg or $fg = 3;
+   defined $bg or $bg = 0;
 
-   $self->{rs_tabbar} = urxvt::SET_COLOR (urxvt::DEFAULT_RSTYLE, $fg    + 2, $bg    + 2);
-   $self->{rs_tab}    = urxvt::SET_COLOR (urxvt::DEFAULT_RSTYLE, $tabfg + 2, $tabbg + 2);
+   $self->{rs_tabbar} = urxvt::SET_COLOR (urxvt::DEFAULT_RSTYLE, $fg + 2, $bg + 2);
 
    ()
 }
