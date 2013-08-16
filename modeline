@@ -10,23 +10,14 @@ modeline - modeline interface to urxvt
 
 =head1 DESCRIPTION
 
-This transforms the terminal into a tabbar with additional terminals, that
-is, it implements what is commonly referred to as "modeline terminal". The topmost line
-displays a "[NEW]" button, which, when clicked, will add a new tab, followed by one
-button per tab.
+This adds a "modeline" to the terminal which you can fill with
+information using a shell script.
 
-Clicking a button will activate that tab. Pressing B<Shift-Left> and
-B<Shift-Right> will switch to the tab left or right of the current one,
-while B<Shift-Down> creates a new tab. Pressing B<Ctrl-Left> and
-B<Ctrl-Right> will renumber the current tab by moving it to the left or
-to the right.
+The modeline offers only a few customizations:
 
-The tabbar itself can be configured similarly to a normal terminal, but
-with a resource class of C<URxvt.modeline>. In addition, it supports the
-following four resources (shown with defaults):
-
-   URxvt.modeline.fg: <colour-index, default 3>
-   URxvt.modeline.bg: <colour-index, default 0>
+    URxvt.modeline.fg: <colour-index, default 3>
+    URxvt.modeline.bg: <colour-index, default 0>
+    URxvt.modeline.command: <string>
 
 See I<COLOR AND GRAPHICS> in the @@RXVT_NAME@@(1) manpage for valid
 indices.
